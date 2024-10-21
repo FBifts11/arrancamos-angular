@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'arrancamos-angular';
+  title = 'Cambié el valor de la propiedad desde el componente';
 }
