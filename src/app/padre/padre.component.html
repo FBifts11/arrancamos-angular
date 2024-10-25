@@ -1,0 +1,19 @@
+<div>
+    <h2>Este es componente padre</h2>
+    <br><br>
+    <p>Contador: {{valorContador}}</p> <!-- Muestro valor de la porpiedad por interpolacion -->
+    
+    <button (click)="incrementarValor()">Incrementar contador</button>
+    <button (click)="decrementarValor()">Decrementar contador</button>
+    <br><br>
+    <label for="alHijo">Mensaje para el hijo: </label>
+    <input type="text" id="alHijo" [(ngModel)]="mensajePadre">
+    <p>Mensaje recibido desde el hijo: <b>{{mensajeRecibidoDesdeHijo}}</b></p>
+    
+    <app-hijo
+    [hijoRecibeMensaje]="mensajePadre"
+    (mensajeDesdeHijo)="recibirMensaje($event)"
+    (incrementarContador)="incrementarValor()"
+    (decrementarContador)="decrementarValor()"></app-hijo>
+</div>
+

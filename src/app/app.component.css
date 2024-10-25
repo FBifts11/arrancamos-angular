@@ -1,4 +1,13 @@
+div {
+    max-width: 70%;
+    background-color: bisque;
+    text-align: center;
+    padding: 2%;
+    border: 5px solid red;
+}
+
 h1 {
     color: red;
     
 }
+

@@ -1,0 +1,11 @@
+<div>
+    <h2>Este es ecomponente hijo</h2>
+    <br>
+    <p>Mensaje recibido desde el padre: {{hijoRecibeMensaje}}</p>
+    <br><br>
+    <label for="mensaje">Escribir mensaje para el padre: </label>
+    <input type="text" id="mensaje" [(ngModel)]="mensaje" (ngModelChange)="enviarMensajeAlPadre()">
+    <br><br>
+    <button (click)="incrementarValor()">Incrementar contador</button>
+    <button (click)="decrementarValor()">Incrementar contador</button>
+</div>
