@@ -1,13 +1,29 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    border: 10px solid black;
+}
+
 div {
-    max-width: 70%;
+    max-width: 50%;
     background-color: bisque;
     text-align: center;
     padding: 2%;
     border: 5px solid red;
+    margin-right: 10px;
 }
 
 h1 {
     color: red;
     
+}
+
+#hermano {
+    max-width: 50%;
+    background-color: bisque;
+    text-align: center;
+    padding: 2%;
+    border: 5px solid green;
+    margin-right: 10px;
 }
 

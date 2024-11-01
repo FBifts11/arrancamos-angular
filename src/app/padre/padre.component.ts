@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HijoComponent } from "../hijo/hijo.component";
 import { FormsModule } from '@angular/forms';
+import { ServicioFamiliarService } from '../servicio-familiar.service';
 
 @Component({
   selector: 'app-padre',
@@ -9,11 +10,21 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './padre.component.html',
   styleUrl: './padre.component.css'
 })
-export class PadreComponent {
+export class PadreComponent implements OnInit{
 
   //CONTADOR
 
   valorContador: number = 0;
+  
+  nombre?: string;
+
+
+  constructor(private _servicioFamiliar: ServicioFamiliarService){}
+
+  ngOnInit(): void {
+    this._servicioFamiliar.setHermanoMayor('Juan')
+    this.nombre = this._servicioFamiliar.getHermanoMayor()
+  }
 
   incrementarValor() {
     this.valorContador++;
@@ -35,5 +46,9 @@ export class PadreComponent {
 
   recibirMensaje($event: string) {
     this.mensajeRecibidoDesdeHijo = $event;
+  }
+
+  saludar() {
+    this._servicioFamiliar.saludar(this._servicioFamiliar.getHermanoMenor())
   }
 }
